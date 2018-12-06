@@ -2,18 +2,18 @@ package tree
 
 import "fmt"
 
-type TreeNode struct {
+type Node struct {
 	Value    int
-	Left,Right *TreeNode
+	Left,Right *Node
 
 }
 
 /**
  工厂函数
  */
-func CreateNode(value int) *TreeNode {
+func CreateNode(value int) *Node {
 	// go 可以返回局部变量    值传递一般在栈上，treeNode需要多次使用 go 也可能在堆上再回收掉
-	return &TreeNode{Value: value}
+	return &Node{Value: value}
 }
 
 /**
@@ -21,21 +21,8 @@ func CreateNode(value int) *TreeNode {
    指针传递方便一些，更加优雅一些
  */
 
-func (node *TreeNode) Print() {
+func (node *Node) Print() {
 	fmt.Println(node.Value)
-}
-
-/**
- 树的遍历 先左再又
- */
-func (node *TreeNode) Traverse() {
-	if node == nil {
-		return
-	}
-	node.Left.Traverse()
-	node.Print()
-	node.Right.Traverse()
-
 }
 
 

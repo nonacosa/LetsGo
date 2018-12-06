@@ -1,21 +1,23 @@
 package main
 
-import "fmt"
-import "tree"
+import (
+	"fmt"
+	"tree"
+)
 
 
 
 func main() {
 
-	var root tree.TreeNode
+	var root tree.Node
 
-	root = tree.TreeNode{Value:5}
+	root = tree.Node{Value:5}
 
-	root.Left = &tree.TreeNode{}
-	root.Right = &tree.TreeNode{5,nil,nil}
+	root.Left = &tree.Node{}
+	root.Right = &tree.Node{5,nil,nil}
 
 	// new 内建函数 返回一个新的地址
-	root.Right.Left = new(tree.TreeNode)
+	root.Right.Left = new(tree.Node)
 	root.Left.Right = tree.CreateNode(2)
 
 	//fmt.Print(treeNVode{})
@@ -23,7 +25,7 @@ func main() {
 	fmt.Println(root)
 	root.Print()
 
-	notes := []tree.TreeNode {
+	notes := []tree.Node {
 		{Value : 3},
 		{},
 		{3,nil,&root},
