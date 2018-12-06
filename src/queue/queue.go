@@ -1,6 +1,6 @@
 package queue
 
-
+// type Queue [] interface {} 支持任何类型 类似 java T
 type Queue []int
 
 func (q *Queue) Push(v int) {

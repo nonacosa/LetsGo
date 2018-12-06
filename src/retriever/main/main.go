@@ -15,6 +15,7 @@ func main() {
 	r = httpRetriever.HttpRetriever{"name"}
 
 	fmt.Println(download(r))
+	// %T ： type
 	fmt.Printf("%T , %v\n",r,r)
 
 	/**
